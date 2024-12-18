@@ -91,7 +91,7 @@ class SleepCycleTracker:
     def calculate_avg(self, period):
         now = datetime.now()
         period_map = {
-            'month': now - timedelta(days=30),
+            'month': now - timedelta(days=31),
             'week': now - timedelta(days=8),
             'all': datetime.min
         }
