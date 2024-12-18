@@ -92,7 +92,7 @@ class SleepCycleTracker:
         now = datetime.now()
         period_map = {
             'month': now - timedelta(days=30),
-            'week': now - timedelta(days=7),
+            'week': now - timedelta(days=8),
             'all': datetime.min
         }
         if period in period_map:
