@@ -200,11 +200,11 @@ class SleepCycleTracker:
                     while sleep_time.date() < wake_time.date():
                         end_of_day = datetime.combine(sleep_time.date(), datetime.max.time())
                         duration = (end_of_day - sleep_time).total_seconds() / 3600
-                        if duration >= 2:  # Filter out durations less than 2 hours
+                        if duration >= 2:
                             durations_by_day.setdefault(sleep_time.date(), []).append(duration)
                         sleep_time = datetime.combine(sleep_time.date() + timedelta(days=1), datetime.min.time())
                     duration = (wake_time - sleep_time).total_seconds() / 3600
-                    if duration >= 2:  # Filter out durations less than 2 hours
+                    if duration >= 2:
                         durations_by_day.setdefault(sleep_time.date(), []).append(duration)
         total_durations_by_day = {
             date: sum(durations) for date, durations in durations_by_day.items()
